@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Gold_Leafed_Cabinet_Build</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=640 height=480 style="width: 640px; height: 480px; background: #000000"></canvas>
+    <script src="Build/0dd3bc9583fec81c81f70b592672c367.js"></script>
+    <script>
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+      }
+
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/c6ac615d6a26ea3b45b89a215418efa8.data",
+        frameworkUrl: "Build/bd751e051bd29edb05fca52e00e3b487.js",
+        codeUrl: "Build/9693a7739769cce321462103428e8365.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Mason Banghart",
+        productName: "Gold_Leafed_Cabinet_Build",
+        productVersion: ".2",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
+</html>
